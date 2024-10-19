@@ -12,7 +12,7 @@ public class DbConnection {
     public static  Connection getConnection() {
     
         try {
-            String url = "jdbc:mysql://localhost:3306/hotel";
+            String url = "jdbc:mysql://localhost:3306/hotel";//dbconnection
             String user = "root";
             String password = "";
             
@@ -21,5 +21,6 @@ public class DbConnection {
             Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+        
 }
 }
