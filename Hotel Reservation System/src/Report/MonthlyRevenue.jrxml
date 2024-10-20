@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da0c3d11-b4cc-4bdf-8260-bc774529401c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT MONTH(CheckInDate) AS Month, YEAR(CheckInDate) AS Year, 
+       SUM(AmountToPay) AS TotalRevenue
+FROM Booking
+WHERE MONTH(CheckInDate) = MONTH(CURDATE()) 
+  AND YEAR(CheckInDate) = YEAR(CURDATE())
+GROUP BY MONTH(CheckInDate), YEAR(CheckInDate);]]>
+	</queryString>
+	<field name="Month" class="java.lang.Long"/>
+	<field name="Year" class="java.sql.Date"/>
+	<field name="TotalRevenue" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="221" y="29" width="100" height="20" forecolor="#33FF00" uuid="08a1810e-3c2e-404e-b0d3-c36ab8aedb89"/>
+				<text><![CDATA[Revenue Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="47" y="2" width="100" height="20" forecolor="#000099" uuid="8119de4e-89e2-4b7a-beed-9ac2d2a02190"/>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="2" width="100" height="20" forecolor="#000099" uuid="105f7303-931b-4947-bb11-4372e868ff55"/>
+				<text><![CDATA[Month]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="2" width="100" height="20" forecolor="#000099" uuid="e0ca6552-0c97-45bb-8dcb-d224eb9fb236"/>
+				<text><![CDATA[TotalRevenue]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="47" y="11" width="100" height="20" uuid="0d298ea8-3a15-4dc7-9687-145d2f3b2216"/>
+				<textFieldExpression><![CDATA[$F{Year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="11" width="100" height="20" uuid="28783cf2-adcd-4247-b490-0164bc257f53"/>
+				<textFieldExpression><![CDATA[$F{Month}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="11" width="100" height="20" uuid="49572169-4d35-44aa-a395-4e759bbef4ec"/>
+				<textFieldExpression><![CDATA[$F{TotalRevenue}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

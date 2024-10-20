@@ -17,7 +17,6 @@ public class Login extends javax.swing.JFrame {
 
         btn_login = new javax.swing.JButton();
         txt_u = new javax.swing.JTextField();
-        txt_p = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btn_login1 = new javax.swing.JButton();
@@ -25,10 +24,11 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txt_p = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Log IN");
+        setTitle("Dashboard");
         setPreferredSize(new java.awt.Dimension(700, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -45,9 +45,6 @@ public class Login extends javax.swing.JFrame {
 
         txt_u.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         getContentPane().add(txt_u, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 200, 40));
-
-        txt_p.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        getContentPane().add(txt_p, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 200, 40));
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel1.setText("Password");
@@ -89,6 +86,9 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel3.setText("Username");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 110, -1));
+
+        txt_p.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jPanel1.add(txt_p, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 200, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 420, 430));
 
@@ -161,7 +161,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txt_p;
+    private javax.swing.JPasswordField txt_p;
     private javax.swing.JTextField txt_u;
     // End of variables declaration//GEN-END:variables
 }

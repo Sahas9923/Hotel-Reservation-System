@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f4e8bc4f-580c-4bed-b101-76979febb77e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT c.*, 
+       b.CheckInDate, 
+       b.CheckOutDate, 
+       r.RoomCategory
+FROM Customer c
+LEFT JOIN Booking b ON c.BookID = b.BookingID
+LEFT JOIN Room r ON b.RoomID = r.RoomID;]]>
+	</queryString>
+	<field name="FirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LastName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RoomCategory" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="27" width="100" height="20" forecolor="#00CC33" uuid="46c07834-8ec2-476b-bc21-02050d6a2f3d"/>
+				<text><![CDATA[Customer Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="6" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" forecolor="#000099" uuid="edb80b46-03a4-454d-ba94-bd56cef22a4d"/>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="2" width="100" height="20" forecolor="#000099" uuid="bc85a761-489f-45aa-b4e7-5169984f1720"/>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="2" width="72" height="20" forecolor="#000099" uuid="33d45b5d-bd46-4186-b0f8-54f5031b5a9a"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="2" width="79" height="20" forecolor="#000099" uuid="a2aa590e-0332-428b-a6b5-badc8af6815f"/>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="2" width="100" height="20" forecolor="#000099" uuid="dfe94603-8590-4608-aa3c-f2c3dcf53c49"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="2" width="100" height="20" forecolor="#000099" uuid="542cd972-0452-41c1-ae0d-e0ddb2e1cbc2"/>
+				<text><![CDATA[RoomCategory]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="11" width="100" height="20" uuid="7cecefac-ece9-47ad-84b2-4cf887325cb9"/>
+				<textFieldExpression><![CDATA[$F{FirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="11" width="100" height="20" uuid="f78bd7b7-3d39-4015-b3b2-b606c8680668"/>
+				<textFieldExpression><![CDATA[$F{LastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="11" width="72" height="20" uuid="5fd0b438-1274-4d1b-b70d-cde4fc9e72fc"/>
+				<textFieldExpression><![CDATA[$F{Gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="11" width="79" height="20" uuid="d02f6a37-ec8e-4727-9312-4d7f056fe30e"/>
+				<textFieldExpression><![CDATA[$F{Mobile}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="11" width="100" height="20" uuid="a0dd4d5f-e7c1-4ca2-86f3-4ea9c51d48d6"/>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="11" width="94" height="20" uuid="c7fd51e2-ec59-45ed-b5a9-c7d769310d42"/>
+				<textFieldExpression><![CDATA[$F{RoomCategory}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
