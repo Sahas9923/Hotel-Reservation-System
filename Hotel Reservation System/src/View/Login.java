@@ -26,6 +26,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txt_p = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -51,6 +52,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 110, -1));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_login1.setBackground(new java.awt.Color(0, 51, 204));
@@ -95,6 +97,9 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
         jLabel5.setText("Log In to the system");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 270, -1));
+
+        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 910, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -161,6 +166,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField txt_p;
     private javax.swing.JTextField txt_u;
     // End of variables declaration//GEN-END:variables

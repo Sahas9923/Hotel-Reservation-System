@@ -4,6 +4,7 @@
  */
 package Report;
 
+import View.Dashboard;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -29,13 +30,13 @@ public class Report1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         btn_bookingsPerMonth = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 204, 255));
         setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -46,23 +47,19 @@ public class Report1 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 140, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 140, 50));
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel1.setText("Room Detail Report");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 210, 40));
 
         jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel2.setText("Customer Detail Report");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 240, 70));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 240, 70));
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel3.setText("View Reports");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 130, 40));
-
-        jButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jButton2.setText("Load");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 140, 50));
 
         btn_bookingsPerMonth.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         btn_bookingsPerMonth.setText("Load");
@@ -71,7 +68,7 @@ public class Report1 extends javax.swing.JFrame {
                 btn_bookingsPerMonthActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_bookingsPerMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 140, 50));
+        getContentPane().add(btn_bookingsPerMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 140, 50));
 
         jButton4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jButton4.setText("Load");
@@ -80,15 +77,19 @@ public class Report1 extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 140, 50));
-
-        jButton5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jButton5.setText("Load");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 140, 50));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 140, 50));
 
         jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel4.setText("Revenue Report");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 210, 40));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 210, 40));
+
+        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sahas Suraweers\\Desktop\\HOtel reservation system\\home-button.png")); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 60, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -209,13 +210,19 @@ public class Report1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        
+        Dashboard d = new Dashboard();
+        d.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_bookingsPerMonth;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

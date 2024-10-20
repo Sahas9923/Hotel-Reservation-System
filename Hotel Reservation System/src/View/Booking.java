@@ -51,7 +51,6 @@ public class Booking extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome to The Grand Cresent");
         setMinimumSize(new java.awt.Dimension(1000, 500));
-        setPreferredSize(new java.awt.Dimension(1000, 500));
         setSize(new java.awt.Dimension(1000, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

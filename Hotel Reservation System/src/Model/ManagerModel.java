@@ -89,17 +89,17 @@ public class ManagerModel {
         return tableModel;
     }
 
-    // Method to fetch booking by RoomID
+    
     public DefaultTableModel getBookingTableModelByRoomID(int roomID) {
         String query = "SELECT * FROM Booking WHERE RoomID = ?";
         DefaultTableModel tableModel = new DefaultTableModel();
 
         try {
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, roomID);  // Set RoomID to the query
+            ps.setInt(1, roomID); 
             ResultSet rs = ps.executeQuery();
 
-            // Set column names for the table model
+            
             tableModel.addColumn("BookingID");
             tableModel.addColumn("NIC");
             tableModel.addColumn("RoomID");
@@ -107,15 +107,15 @@ public class ManagerModel {
             tableModel.addColumn("CheckOutDate");
             tableModel.addColumn("AmountToPay");
 
-            // Add rows to the table model
+           
             while (rs.next()) {
                 Object[] rowData = {
-                    rs.getInt("BookingID"), // Booking ID
-                    rs.getString("NIC"), // NIC of the customer
-                    rs.getInt("RoomID"), // Room ID linked to the booking
-                    rs.getDate("CheckInDate"), // Check-in date
-                    rs.getDate("CheckOutDate"), // Check-out date
-                    rs.getBigDecimal("AmountToPay") // Amount to be paid for the booking
+                    rs.getInt("BookingID"), 
+                    rs.getString("NIC"), 
+                    rs.getInt("RoomID"), 
+                    rs.getDate("CheckInDate"), 
+                    rs.getDate("CheckOutDate"), 
+                    rs.getBigDecimal("AmountToPay") 
                 };
                 tableModel.addRow(rowData);
             }

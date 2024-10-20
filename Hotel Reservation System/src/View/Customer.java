@@ -78,6 +78,7 @@ public class Customer extends javax.swing.JFrame {
         txt_fn = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txt_ln = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Confirm Booking");
@@ -117,11 +118,13 @@ public class Customer extends javax.swing.JFrame {
         });
         getContentPane().add(btn_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 310, 40));
 
+        jLabel8.setBackground(new java.awt.Color(204, 204, 255));
         jLabel8.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
         jLabel8.setText("We value your infomation !");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 360, 30));
+        jLabel8.setOpaque(true);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 340, 30));
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 51));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 153));
         jPanel1.setLayout(null);
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
@@ -163,7 +166,7 @@ public class Customer extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 450, 230));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255,80));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
@@ -192,40 +195,41 @@ public class Customer extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 450, 140));
 
-        jPanel3.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel3.setBackground(new java.awt.Color(204, 255, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
         jLabel7.setText("We want to know few....");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 310, 30));
 
         jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel2.setText("Gender");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, 31));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 31));
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jRadioButton1.setText("Male");
-        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 98, -1));
+        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 98, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jRadioButton2.setText("Female");
-        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 98, -1));
+        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 98, -1));
 
         jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel4.setText("Mobile No:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, 31));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 31));
 
         txt_mobile.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jPanel3.add(txt_mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 180, 38));
+        jPanel3.add(txt_mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 210, 38));
 
         jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel5.setText("Email");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, 31));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 31));
 
         txt_email.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         txt_email.addActionListener(new java.awt.event.ActionListener() {
@@ -233,31 +237,34 @@ public class Customer extends javax.swing.JFrame {
                 txt_emailActionPerformed(evt);
             }
         });
-        jPanel3.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 180, 38));
+        jPanel3.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 210, 38));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel1.setText("NIC / Passport");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 151, 31));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 151, 31));
 
         txt_nic.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jPanel3.add(txt_nic, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 180, 38));
+        jPanel3.add(txt_nic, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 210, 38));
 
         jLabel6.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel6.setText("First Name");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 31));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 31));
 
         txt_fn.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jPanel3.add(txt_fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 180, 38));
+        jPanel3.add(txt_fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 210, 38));
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel3.setText("Last Name");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, 31));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, 31));
 
         txt_ln.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jPanel3.add(txt_ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 180, 38));
+        jPanel3.add(txt_ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 210, 38));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 470, 380));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sahas Suraweers\\Desktop\\HOtel reservation system\\hotel_office_admin_area_converted.png")); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -389,6 +396,7 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

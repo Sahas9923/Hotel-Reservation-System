@@ -31,16 +31,15 @@ public class Regeistration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_cancel = new javax.swing.JButton();
-        btn_register = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txt_u = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txt_p = new javax.swing.JTextField();
-        txt_r = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        btn_clear = new javax.swing.JButton();
+        txt_p = new javax.swing.JPasswordField();
+        txt_r = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         txt_a = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -56,7 +55,9 @@ public class Regeistration extends javax.swing.JFrame {
         txt_ln = new javax.swing.JTextField();
         txt_e = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        btn_clear = new javax.swing.JButton();
+        btn_register = new javax.swing.JButton();
+        btn_cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registration");
@@ -64,29 +65,15 @@ public class Regeistration extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1100, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_cancel.setBackground(new java.awt.Color(0, 51, 204));
-        btn_cancel.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_cancel.setForeground(new java.awt.Color(255, 255, 255));
-        btn_cancel.setText("Back");
-        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, 310, 40));
+        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_register.setBackground(new java.awt.Color(0, 51, 204));
-        btn_register.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_register.setForeground(new java.awt.Color(255, 255, 255));
-        btn_register.setText("Register");
-        btn_register.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_registerActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 320, 40));
+        jLabel11.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel11.setText("Complete your registration");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 350, 50));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_u.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
@@ -100,39 +87,20 @@ public class Regeistration extends javax.swing.JFrame {
         jLabel10.setText("Password");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, 50));
 
-        txt_p.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        txt_p.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txt_p, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 170, 30));
-
-        txt_r.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jPanel1.add(txt_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 170, 30));
-
         jLabel8.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel8.setText("Retype password");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 190, 50));
+        jPanel1.add(txt_p, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 112, 170, 30));
+        jPanel1.add(txt_r, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 170, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 400, 250));
-
-        btn_clear.setBackground(new java.awt.Color(0, 51, 204));
-        btn_clear.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
-        btn_clear.setText("Clear");
-        btn_clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_clearActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 320, 40));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 400, 250));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txt_a.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jPanel2.add(txt_a, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 360, 60));
+        jPanel2.add(txt_a, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 360, 40));
 
         jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel5.setText("Address");
@@ -180,18 +148,45 @@ public class Regeistration extends javax.swing.JFrame {
         jLabel3.setText("Employee ID");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 152, 52));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 570, 400));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 570, 420));
 
-        jLabel11.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        jLabel11.setText("Complete your registration");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 350, 50));
+        btn_clear.setBackground(new java.awt.Color(0, 51, 204));
+        btn_clear.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
+        btn_clear.setText("Clear");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clearActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btn_clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 320, 40));
+
+        btn_register.setBackground(new java.awt.Color(0, 51, 204));
+        btn_register.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_register.setForeground(new java.awt.Color(255, 255, 255));
+        btn_register.setText("Register");
+        btn_register.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registerActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btn_register, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 320, 40));
+
+        btn_cancel.setBackground(new java.awt.Color(0, 51, 204));
+        btn_cancel.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_cancel.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cancel.setText("Back");
+        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 320, 40));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txt_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pActionPerformed
 
     private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
 
@@ -299,6 +294,7 @@ public class Regeistration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txt_a;
     private javax.swing.JTextField txt_e;
     private javax.swing.JTextField txt_em;
@@ -306,8 +302,8 @@ public class Regeistration extends javax.swing.JFrame {
     private javax.swing.JTextField txt_ln;
     private javax.swing.JTextField txt_m;
     private javax.swing.JTextField txt_n;
-    private javax.swing.JTextField txt_p;
-    private javax.swing.JTextField txt_r;
+    private javax.swing.JPasswordField txt_p;
+    private javax.swing.JPasswordField txt_r;
     private javax.swing.JTextField txt_u;
     // End of variables declaration//GEN-END:variables
 }
