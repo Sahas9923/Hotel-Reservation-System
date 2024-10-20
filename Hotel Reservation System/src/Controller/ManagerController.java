@@ -77,4 +77,12 @@ public class ManagerController {
         return model.deleteBooking(bookingID); 
 
 }
+    
+    public String getWelcomeMessage(int bookingID) {
+        return model.getWelcomeMessage(bookingID);
     }
+    
+    public String[] getCustomerDetails(int bookingID) {
+        return model.getCustomerDetailsByBookingID(bookingID);
+    }
+}

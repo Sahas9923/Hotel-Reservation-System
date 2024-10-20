@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="414da1e6-a798-43e6-8e74-39932e17fbd1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT MONTH(CheckInDate) AS Month, COUNT(*) AS TotalBookings
+FROM Booking
+GROUP BY MONTH(CheckInDate)
+ORDER BY Month;]]>
+	</queryString>
+	<field name="Month" class="java.lang.Integer"/>
+	<field name="TotalBookings" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="78" y="33" width="100" height="20" uuid="a4b36b3e-43ad-458e-a080-ceff76effff0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="21" y="5" width="94" height="48" uuid="977d1fba-6383-4e86-92ad-68b61b8ab3a9"/>
+				<imageExpression><![CDATA["C:\\Users\\Sahas Suraweers\\Desktop\\HOtel reservation system\\Reports 1.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="78" y="12" width="100" height="20" uuid="31badd73-9315-484c-be39-0a61c14f72ef"/>
+				<text><![CDATA[Bookings Per Month]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="94" y="2" width="140" height="20" forecolor="#000099" uuid="9cb83ed7-212d-4642-8466-32d1ceb21d13"/>
+				<text><![CDATA[Month]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="0" width="100" height="20" forecolor="#000099" uuid="ef0a75e3-f850-406b-9e8a-ce09811d43fe"/>
+				<text><![CDATA[TotalBookings]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="94" y="16" width="100" height="20" uuid="b8c7e5fb-e472-4e6f-bb3b-0bb332d29d52"/>
+				<textFieldExpression><![CDATA[$F{Month}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="16" width="100" height="20" uuid="3c7891c3-1adb-4e95-b912-988ed000cb34"/>
+				<textFieldExpression><![CDATA[$F{TotalBookings}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<rectangle>
+				<reportElement x="251" y="11" width="100" height="20" uuid="98904687-2cf3-468b-83c8-674bfd228c15"/>
+			</rectangle>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

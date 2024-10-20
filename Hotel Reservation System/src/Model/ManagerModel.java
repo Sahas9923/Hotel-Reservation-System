@@ -1,6 +1,7 @@
 package Model;
 
 import DB.DbConnection;  // Your custom DB connection class
+import View.Customer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -371,5 +372,45 @@ public class ManagerModel {
         }
         return false;
     }
+    
+   public String getWelcomeMessage(int bookingID) {
+        String query = "SELECT FirstName, LastName, Gender FROM Customer WHERE BookID = ?";
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, bookingID);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                String firstName = rs.getString("FirstName");
+                String lastName = rs.getString("LastName");
+                String gender = rs.getString("Gender");
+                
+                // Generate and return the welcome message
+                String title = gender.equalsIgnoreCase("Female") ? "Ms." : "Mr.";
+                return "Welcome " + title + " " + firstName + " " + lastName;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "Customer not found for Booking ID: " + bookingID;  // Return error message if customer not found
+    }
+   
+   public String[] getCustomerDetailsByBookingID(int bookingID) {
+        String query = "SELECT NIC, Mobile, Email FROM Customer WHERE BookID = ?";
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setInt(1, bookingID);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                String nic = rs.getString("NIC");
+                String mobile = rs.getString("Mobile");
+                String email = rs.getString("Email");
 
+                // Return NIC, Mobile, and Email as an array of strings
+                return new String[]{nic, mobile, email};
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;  // Return null if customer not found or an error occurs
+    }
 }
+
+

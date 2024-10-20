@@ -4,7 +4,6 @@ import Controller.BookingController;
 import Controller.CustomerController;
 import Model.CustomerModel;
 import Model.BookingModel;
-import java.awt.HeadlessException;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -16,9 +15,6 @@ public class Customer extends javax.swing.JFrame {
     private Integer bookingId;
     private double payment;
 
-    private CustomerModel customerModel = new CustomerModel();
-    private CustomerController controller = new CustomerController(customerModel);
-
     public Customer(Integer bookingId, Integer roomID, String checkInDate, String checkOutDate, double payment) {
 
         this.roomID = roomID;
@@ -27,11 +23,17 @@ public class Customer extends javax.swing.JFrame {
         this.bookingId = bookingId;
         this.payment = payment;
 
+        
+
         initComponents();
 
         lbl_payment.setText(String.format("%.2f", payment));
         lbl_BookingID.setText(String.format("%d", bookingId));
         lbl_roomID.setText(String.format("%d", roomID));
+    }
+
+    Customer() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @SuppressWarnings("unchecked")
@@ -42,21 +44,7 @@ public class Customer extends javax.swing.JFrame {
         btn_cnacel = new javax.swing.JButton();
         btn_clear = new javax.swing.JButton();
         btn_confirm = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
-        txt_mobile = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txt_email = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        txt_nic = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txt_fn = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txt_ln = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -75,6 +63,21 @@ public class Customer extends javax.swing.JFrame {
         lbl_BookingID = new javax.swing.JLabel();
         lbl_roomID = new javax.swing.JLabel();
         lbl_payment = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        txt_mobile = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_email = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txt_nic = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txt_fn = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txt_ln = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Confirm Booking");
@@ -114,73 +117,11 @@ public class Customer extends javax.swing.JFrame {
         });
         getContentPane().add(btn_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 310, 40));
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        jLabel7.setText("We want to know few....");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 310, 30));
-
         jLabel8.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        jLabel8.setText("The Grand Crecsent");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 270, 30));
+        jLabel8.setText("We value your infomation !");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 360, 30));
 
-        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel2.setText("Gender");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, -1, 31));
-
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        jRadioButton1.setText("Male");
-        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, 98, -1));
-
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        jRadioButton2.setText("Female");
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 310, 98, -1));
-
-        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel4.setText("Mobile No:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, -1, 31));
-
-        txt_mobile.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        getContentPane().add(txt_mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, 150, 38));
-
-        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel5.setText("Email");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, -1, 31));
-
-        txt_email.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        txt_email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_emailActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 150, 38));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel1.setText("NIC / Passport");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 151, 31));
-
-        txt_nic.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        getContentPane().add(txt_nic, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 150, 38));
-
-        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel6.setText("First Name");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, -1, 31));
-
-        txt_fn.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        getContentPane().add(txt_fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, 150, 38));
-
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel3.setText("Last Name");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, 31));
-
-        txt_ln.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        getContentPane().add(txt_ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 150, 38));
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 51));
         jPanel1.setLayout(null);
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic", 1, 18)); // NOI18N
@@ -220,36 +161,103 @@ public class Customer extends javax.swing.JFrame {
         jPanel1.add(txt_chn);
         txt_chn.setBounds(170, 160, 220, 30);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 440, 220));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 450, 230));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255,80));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel17.setText("Booking ID       :");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, -1));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel19.setText("Room ID           :");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 170, 20));
+        jLabel19.setText("Room ID          :");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 170, 20));
 
         jLabel18.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel18.setText("To pay ");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 170, 31));
+        jLabel18.setText("To pay             :      LKR");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 240, 31));
 
         lbl_BookingID.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         lbl_BookingID.setText("Booking ID");
-        jPanel2.add(lbl_BookingID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+        jPanel2.add(lbl_BookingID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
 
         lbl_roomID.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         lbl_roomID.setText("Room ID           ");
-        jPanel2.add(lbl_roomID, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 100, -1));
+        jPanel2.add(lbl_roomID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 100, -1));
 
         lbl_payment.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         lbl_payment.setText("25000.00");
-        jPanel2.add(lbl_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 100, 31));
+        jPanel2.add(lbl_payment, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 100, 31));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 440, 110));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 450, 140));
+
+        jPanel3.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel7.setText("We want to know few....");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 310, 30));
+
+        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel2.setText("Gender");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, 31));
+
+        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jRadioButton1.setText("Male");
+        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 98, -1));
+
+        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jRadioButton2.setText("Female");
+        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 98, -1));
+
+        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel4.setText("Mobile No:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, 31));
+
+        txt_mobile.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 180, 38));
+
+        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel5.setText("Email");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, 31));
+
+        txt_email.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        txt_email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_emailActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txt_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 180, 38));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel1.setText("NIC / Passport");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 151, 31));
+
+        txt_nic.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_nic, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 180, 38));
+
+        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel6.setText("First Name");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 31));
+
+        txt_fn.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 180, 38));
+
+        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel3.setText("Last Name");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, 31));
+
+        txt_ln.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_ln, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 180, 38));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 470, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,9 +280,7 @@ public class Customer extends javax.swing.JFrame {
 
     private void btn_cnacelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cnacelActionPerformed
 
-        BookingModel roomModel = new BookingModel();
-        BookingController bookingController = new BookingController(roomModel);
-        Booking b = new Booking(bookingController);
+        Booking b = new Booking();
         b.setVisible(true);
         this.dispose();
 
@@ -309,9 +315,9 @@ public class Customer extends javax.swing.JFrame {
 
         String gender = null;
         if (jRadioButton1.isSelected()) {
-            gender = "Male";  
+            gender = "Male";
         } else if (jRadioButton2.isSelected()) {
-            gender = "Female";  
+            gender = "Female";
         } else {
             JOptionPane.showMessageDialog(this, "Please select a gender.");
             return;
@@ -341,17 +347,15 @@ public class Customer extends javax.swing.JFrame {
         if (expiryDate.before(currentDate)) {
             JOptionPane.showMessageDialog(this, "Expiry date must be after the current date.");
             return;
-        }        
+        }
 
         customerController.processReservationAndPayment(
                 bookingId, roomID, checkInDate, checkOutDate, payment,
                 nic, firstName, lastName, gender, email, mobile, currentDate);
 
         JOptionPane.showMessageDialog(this, "Reservation and payment processed successfully! call our HOTLINE for more details");
-        
-        BookingModel roomModel = new BookingModel();
-        BookingController bookingController = new BookingController(roomModel);
-        Booking b = new Booking(bookingController);
+
+        Booking b = new Booking();
         b.setVisible(true);
         this.dispose();
 
@@ -387,6 +391,7 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JLabel lbl_BookingID;

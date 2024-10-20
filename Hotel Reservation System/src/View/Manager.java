@@ -18,33 +18,61 @@ public class Manager extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel12 = new javax.swing.JLabel();
+        btn_home = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
         txt_status = new javax.swing.JTextField();
         btn_status = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_status = new javax.swing.JTable();
+        btn_cancel = new javax.swing.JButton();
         btn_checkin = new javax.swing.JButton();
         btn_checkout = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        lbl_setname = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_unic = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txt_umob = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txt_uema = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
         cmb_booking = new javax.swing.JComboBox<>();
         txt_searchBooking = new javax.swing.JTextField();
-        btn_lastMonth = new javax.swing.JButton();
+        btn_search = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_inventory = new javax.swing.JTable();
-        btn_All = new javax.swing.JButton();
         btn_today = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        btn_search = new javax.swing.JButton();
-        btn_cancel = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        btn_lastMonth = new javax.swing.JButton();
+        btn_All = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Reservation Manager");
         setBackground(new java.awt.Color(204, 204, 0));
+        setMinimumSize(new java.awt.Dimension(1160, 700));
+        setPreferredSize(new java.awt.Dimension(1260, 522));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel12.setText("Manage Bookings");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 280, 40));
+
+        btn_home.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sahas Suraweers\\Desktop\\HOtel reservation system\\home-button.png")); // NOI18N
+        btn_home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_homeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 580, 50, 50));
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel13.setText("Booking ID");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, 40));
 
         txt_status.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         txt_status.addActionListener(new java.awt.event.ActionListener() {
@@ -52,16 +80,18 @@ public class Manager extends javax.swing.JFrame {
                 txt_statusActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 230, 40));
+        jPanel1.add(txt_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 240, 40));
 
+        btn_status.setBackground(new java.awt.Color(0, 51, 204));
         btn_status.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_status.setForeground(new java.awt.Color(255, 255, 255));
         btn_status.setText("Search");
         btn_status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_statusActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 70, 120, 40));
+        jPanel1.add(btn_status, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 170, 40));
 
         tbl_status.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         tbl_status.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,42 +109,93 @@ public class Manager extends javax.swing.JFrame {
         tbl_status.setShowGrid(true);
         jScrollPane1.setViewportView(tbl_status);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 520, 110));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 540, 80));
 
+        btn_cancel.setBackground(new java.awt.Color(0, 51, 204));
+        btn_cancel.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_cancel.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cancel.setText("Cancel Booking");
+        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cancelActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 180, 40));
+
+        btn_checkin.setBackground(new java.awt.Color(0, 51, 204));
         btn_checkin.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_checkin.setForeground(new java.awt.Color(255, 255, 255));
         btn_checkin.setText("Checked In");
         btn_checkin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_checkinActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_checkin, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 510, 140, 40));
+        jPanel1.add(btn_checkin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 170, 40));
 
+        btn_checkout.setBackground(new java.awt.Color(0, 51, 204));
         btn_checkout.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_checkout.setForeground(new java.awt.Color(255, 255, 255));
         btn_checkout.setText("Checked Out");
         btn_checkout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_checkoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 510, 160, 40));
+        jPanel1.add(btn_checkout, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 170, 40));
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_setname.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        lbl_setname.setForeground(new java.awt.Color(0, 0, 153));
+        jPanel3.add(lbl_setname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 310, 40));
+
+        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel3.setText("NIC / Passport");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 150, 40));
+
+        txt_unic.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_unic, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 230, 30));
+
+        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel5.setText("Mobile");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, 40));
+
+        txt_umob.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_umob, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 230, 30));
+
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel1.setText("Email");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 130, 40));
+
+        txt_uema.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jPanel3.add(txt_uema, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 230, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 540, 210));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, 560, 480));
+
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmb_booking.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         cmb_booking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Booking ID", "NIC / Passport", "Room ID" }));
         cmb_booking.setSelectedIndex(1);
-        getContentPane().add(cmb_booking, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 190, 40));
+        jPanel2.add(cmb_booking, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 40));
 
         txt_searchBooking.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        getContentPane().add(txt_searchBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 270, 40));
+        jPanel2.add(txt_searchBooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 190, 40));
 
-        btn_lastMonth.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_lastMonth.setText("Last 30 Days");
-        btn_lastMonth.addActionListener(new java.awt.event.ActionListener() {
+        btn_search.setBackground(new java.awt.Color(0, 51, 204));
+        btn_search.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        btn_search.setForeground(new java.awt.Color(255, 255, 255));
+        btn_search.setText("Search");
+        btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_lastMonthActionPerformed(evt);
+                btn_searchActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_lastMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 200, 42));
+        jPanel2.add(btn_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 180, 40));
 
         tbl_inventory.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         tbl_inventory.setModel(new javax.swing.table.DefaultTableModel(
@@ -133,63 +214,50 @@ public class Manager extends javax.swing.JFrame {
         tbl_inventory.setShowGrid(true);
         jScrollPane2.setViewportView(tbl_inventory);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 590, 362));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 570, 320));
 
-        btn_All.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_All.setText("All Bookings");
-        btn_All.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_AllActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_All, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 510, 180, 42));
-
-        btn_today.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_today.setText("Today");
+        btn_today.setBackground(new java.awt.Color(0, 51, 204));
+        btn_today.setFont(new java.awt.Font("Bookman Old Style", 1, 16)); // NOI18N
+        btn_today.setForeground(new java.awt.Color(255, 255, 255));
+        btn_today.setText("Bookings Today");
         btn_today.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_todayActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_today, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 170, 42));
+        jPanel2.add(btn_today, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 180, 42));
 
-        jLabel12.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel12.setText("Booking ID");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 120, 40));
-
-        btn_search.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_search.setText("Search");
-        btn_search.addActionListener(new java.awt.event.ActionListener() {
+        btn_lastMonth.setBackground(new java.awt.Color(0, 51, 204));
+        btn_lastMonth.setFont(new java.awt.Font("Bookman Old Style", 1, 16)); // NOI18N
+        btn_lastMonth.setForeground(new java.awt.Color(255, 255, 255));
+        btn_lastMonth.setText("Bookings (30 days)");
+        btn_lastMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_searchActionPerformed(evt);
+                btn_lastMonthActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 100, 40));
+        jPanel2.add(btn_lastMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 190, 42));
 
-        btn_cancel.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        btn_cancel.setText("Cancel");
-        btn_cancel.addActionListener(new java.awt.event.ActionListener() {
+        btn_All.setBackground(new java.awt.Color(0, 51, 204));
+        btn_All.setFont(new java.awt.Font("Bookman Old Style", 1, 16)); // NOI18N
+        btn_All.setForeground(new java.awt.Color(255, 255, 255));
+        btn_All.setText("Bookings All");
+        btn_All.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cancelActionPerformed(evt);
+                btn_AllActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 510, 170, 40));
+        jPanel2.add(btn_All, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 180, 42));
 
-        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel1.setText("Email");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 130, 40));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 590, 480));
 
-        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel5.setText("Mobile");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 130, 40));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 280, 260, 30));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 240, 260, 30));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 200, 260, 30));
-
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
-        jLabel3.setText("NIC / Passport");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, 150, 40));
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 320, 40));
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sahas Suraweers\\Desktop\\HOtel reservation system\\logoutcc_12319756.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 580, 50, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -319,6 +387,17 @@ public class Manager extends javax.swing.JFrame {
             int BookingID = Integer.parseInt(getBookingID);
             ManagerModel model = new ManagerModel();
             ManagerController managerController = new ManagerController(model);
+
+            String welcomeMessage = managerController.getWelcomeMessage(BookingID);
+            lbl_setname.setText(welcomeMessage);
+            String[] customerDetails = managerController.getCustomerDetails(BookingID);
+
+            if (customerDetails != null) {
+                // Set the text fields to display the contact details
+                txt_unic.setText(customerDetails[0]);
+                txt_umob.setText(customerDetails[1]);
+                txt_uema.setText(customerDetails[2]);
+            }
             DefaultTableModel tableModel = managerController.getBookingSatus(BookingID);
 
             tbl_status.setModel(tableModel);
@@ -462,31 +541,61 @@ public class Manager extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_cancelActionPerformed
 
+    private void btn_homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_homeActionPerformed
+        Dashboard d = new Dashboard();
+        d.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_btn_homeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(
+                this,
+                "Are you sure you want to sign out?",
+                "Confirm Sign Out",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (response == JOptionPane.YES_OPTION) {
+            Booking b = new Booking();
+            b.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_All;
     private javax.swing.JButton btn_cancel;
     private javax.swing.JButton btn_checkin;
     private javax.swing.JButton btn_checkout;
+    private javax.swing.JButton btn_home;
     private javax.swing.JButton btn_lastMonth;
     private javax.swing.JButton btn_search;
     private javax.swing.JButton btn_status;
     private javax.swing.JButton btn_today;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmb_booking;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lbl_setname;
     private javax.swing.JTable tbl_inventory;
     private javax.swing.JTable tbl_status;
     private javax.swing.JTextField txt_searchBooking;
     private javax.swing.JTextField txt_status;
+    private javax.swing.JTextField txt_uema;
+    private javax.swing.JTextField txt_umob;
+    private javax.swing.JTextField txt_unic;
     // End of variables declaration//GEN-END:variables
 }

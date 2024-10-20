@@ -5,6 +5,7 @@
 package View;
 
 import Controller.BookingController;
+import Model.BookingModel;
 import java.awt.HeadlessException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,11 +16,12 @@ import javax.swing.JOptionPane;
  * @author Sahas Suraweers
  */
 public class Booking extends javax.swing.JFrame {
+    
+    BookingModel roomModel = new BookingModel();
+    private final BookingController controller = new BookingController(roomModel);
 
-    private final BookingController controller;
-
-    public Booking(BookingController controller) {
-        this.controller = controller;
+    public Booking() {
+        
         initComponents();
 
     }
@@ -43,6 +45,7 @@ public class Booking extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,7 +55,7 @@ public class Booking extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_staff.setBackground(new java.awt.Color(0, 102, 153));
+        btn_staff.setBackground(new java.awt.Color(0, 51, 204));
         btn_staff.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         btn_staff.setForeground(new java.awt.Color(255, 255, 255));
         btn_staff.setText("Staff Login");
@@ -61,7 +64,7 @@ public class Booking extends javax.swing.JFrame {
                 btn_staffActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_staff, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 200, 40));
+        getContentPane().add(btn_staff, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 190, 40));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0,80));
 
@@ -103,7 +106,7 @@ public class Booking extends javax.swing.JFrame {
         cmb_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Double", "Triple", "Family" }));
         cmb_type.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btn_search.setBackground(new java.awt.Color(0, 51, 102));
+        btn_search.setBackground(new java.awt.Color(0, 51, 204));
         btn_search.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         btn_search.setForeground(new java.awt.Color(255, 255, 255));
         btn_search.setLabel("Reserve");
@@ -179,23 +182,31 @@ public class Booking extends javax.swing.JFrame {
                             .addComponent(jLabel2))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(date_out, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(date_in, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cmb_cat)
-                        .addComponent(cmb_type)))
-                .addGap(41, 41, 41))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(date_in, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                        .addComponent(date_out, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_search, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                        .addComponent(cmb_type, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(cmb_cat, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 1000, 150));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 1000, 190));
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText("The Grand Crecsent");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, 80));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 80));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel7.setText("Hotline - 0775556662");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 200, 60));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Sahas Suraweers\\Desktop\\HOtel reservation system\\Hotel_Building_Night_Image.png")); // NOI18N
         jLabel1.setAlignmentY(0.0F);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 590));
@@ -274,9 +285,9 @@ public class Booking extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_searchActionPerformed
 
     private void btn_staffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_staffActionPerformed
-
-        Manager man = new Manager();
-        man.setVisible(true);
+        
+        Login d = new Login();
+        d.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_staffActionPerformed
 
@@ -295,6 +306,7 @@ public class Booking extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

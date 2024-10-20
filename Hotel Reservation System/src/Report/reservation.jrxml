@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9562e4d7-35f0-4609-be3c-5af0d7a9b61c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from booking]]>
+	</queryString>
+	<field name="BookingID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NIC" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RoomID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CheckInDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CheckOutDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AmountToPay" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="365" y="0" width="100" height="20" forecolor="#000066" uuid="0218a7b6-4b8a-4ff8-8219-2105037fded4"/>
+				<text><![CDATA[Generated Date:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="7ff45c77-4bbf-44ed-9e08-82d6539b0012"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="2" width="107" height="20" forecolor="#000000" backcolor="#99FFFF" uuid="0351755f-bee2-4dfc-b224-3dc58e64715c"/>
+				<text><![CDATA[NIC / Pasport]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="79" height="20" forecolor="#000000" backcolor="#99FFFF" uuid="c97ed40f-d4a1-4ddc-833b-d1c45f5e7bd3"/>
+				<text><![CDATA[Booking ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="2" width="79" height="20" forecolor="#000000" backcolor="#99FFFF" uuid="cf819537-1d0b-49ea-b0c4-ea7524414892"/>
+				<text><![CDATA[Room Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="2" width="100" height="20" forecolor="#000000" backcolor="#99FFFF" uuid="c489eee9-6530-41ca-b897-030b5558e578"/>
+				<text><![CDATA[Check In Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="2" width="100" height="20" forecolor="#000000" backcolor="#99FFFF" uuid="0c1ed8b3-6c85-48fa-9489-4a81c2309afb"/>
+				<text><![CDATA[Check Out Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="2" width="90" height="20" forecolor="#000000" backcolor="#99FFFF" uuid="4e8418b3-76ce-4e10-8592-728d377d42a8"/>
+				<text><![CDATA[Paid Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="79" y="8" width="107" height="20" forecolor="#0033CC" uuid="cd0c667e-f8b3-4cb0-86b7-6059d9045f54"/>
+				<textFieldExpression><![CDATA[$F{NIC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="8" width="79" height="20" forecolor="#0033CC" uuid="b5f24ba9-1bd1-452b-81f5-f16960ccd893"/>
+				<textFieldExpression><![CDATA[$F{BookingID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="9" width="79" height="20" forecolor="#0033CC" uuid="bfb131a5-4a19-4b40-914a-c403d758ab93"/>
+				<textFieldExpression><![CDATA[$F{RoomID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="8" width="100" height="20" forecolor="#0033CC" uuid="297a4e09-3407-4c0f-9bb2-ed5f43277128"/>
+				<textFieldExpression><![CDATA[$F{CheckInDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="8" width="100" height="20" forecolor="#0033CC" uuid="7d79489e-26d2-4189-a9b6-9946b9219665"/>
+				<textFieldExpression><![CDATA[$F{CheckOutDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="9" width="90" height="20" forecolor="#0033CC" uuid="7d28b057-9861-43a0-a43a-37221f420d26"/>
+				<textFieldExpression><![CDATA[$F{AmountToPay}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
